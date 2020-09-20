@@ -1,2 +1,2 @@
 # matchmefy-web
-:spider: Presentation website for Matchmefy :music:
+Presentation website for Matchmefy
