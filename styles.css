@@ -110,6 +110,7 @@ ul li {
 
 .cookieBanner {
     background-color: var(--footer-grey);
+    display: none;
 }
 
 .cookieBannerText {

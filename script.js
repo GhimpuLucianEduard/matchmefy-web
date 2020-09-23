@@ -1,7 +1,6 @@
 $(document).ready(function () {
     if (getCookie("mmf_cookie_consent") === "") {
-        $('.alert').alert()
-        $("#cookieBanner").addClass('show')
+        $('#cookieBanner').slideDown(500)
     } else {
         if (getCookie("mmf_cookie_consent") === "true") {
             window['ga-disable-' + gtagId] = false;
@@ -10,12 +9,14 @@ $(document).ready(function () {
     }
 
     $('#accept').click(() => {
+        $('#cookieBanner').slideUp(500)
         setCookie("mmf_cookie_consent", true, 3600);
         window['ga-disable-' + gtagId] = false;
         gtag('config', gtagId);
     })
 
     $('#reject').click(() => {
+        $('#cookieBanner').slideUp(500)
         deleteCookies()
         setCookie("mmf_cookie_consent", false, 3600);
     })

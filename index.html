@@ -21,9 +21,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Matchmefy script -->
     <script src="script.js?1500"></script>
@@ -41,13 +39,13 @@
 
 <body class="mainBody">
 
-    <div id="cookieBanner" class="alert fade cookieBanner fixed-top" role="alert">
+    <div id="cookieBanner" class="alert cookieBanner sticky-top" role="alert">
         <span class="cookieBannerText">We use cookies to optimize site functionality and give you the best possible
             experience <a href="web-cookies.html" class="cookieBannerLink">Learn more</a> </span>
         <div class="float-right">
-            <button id="reject" type="button" data-dismiss="alert"
+            <button id="reject" type="button" 
                 class="btn btn-flat cookieBannerReject btn-sm">Reject</button>
-            <button id="accept" type="button" data-dismiss="alert"
+            <button id="accept" type="button" 
                 class="btn btn-primary cookieBannerAccept btn-sm">Accept</button>
         </div>
     </div>
