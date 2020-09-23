@@ -2,32 +2,17 @@
 <html lang="en">
 
 <head>
-        <!-- Start cookieyes banner -->
-        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d0347f3e64ebb16a2ac24c27.js"></script>
-        <!-- End cookieyes banner --> 
-    <!-- Cookie Consent by https://www.FreePrivacyPolicy.com -->
-    <script type="text/javascript"
-        src="//www.freeprivacypolicy.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            cookieconsent.run({ "notice_banner_type": "headline", "consent_type": "express", "palette": "dark", "language": "en", "website_name": "Matchmefy" });
-        });
-    </script>
 
     <!-- Google Analytics -->
-    <script type="text/plain" cookie-consent="tracking" async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-178747788-1"></script>
-    <script type="text/plain" cookie-consent="tracking">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-178747788-1');
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178747788-1"></script>
+    <script>
+        gtagId = 'UA-178747788-1';
+        window['ga-disable-' + gtagId] = true;
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
     </script>
-    <!-- end of Google Analytics-->
 
-    <noscript>Cookie Consent by <a href="https://www.FreePrivacyPolicy.com/free-cookie-consent/"
-            rel="nofollow noopener">FreePrivacyPolicy.com</a></noscript>
-    <!-- End Cookie Consent -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,10 +20,19 @@
     <!-- Matchmefy style -->
     <link rel="stylesheet" href="styles.css">
 
-    <script src="https://kit.fontawesome.com/d552808d0b.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
 
+    <!-- Matchmefy script -->
+    <script src="script.js?1500"></script>
+    
+    <!-- fonts -->
+    <script src="https://kit.fontawesome.com/d552808d0b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -47,17 +41,28 @@
 
 <body class="mainBody">
 
+    <div id="cookieBanner" class="alert fade cookieBanner fixed-top" role="alert">
+        <span class="cookieBannerText">We use cookies to optimize site functionality and give you the best possible
+            experience <a href="#" class="cookieBannerLink">Learn more</a> </span>
+        <div class="float-right">
+            <button id="reject" type="button" data-dismiss="alert"
+                class="btn btn-flat cookieBannerReject btn-sm">Reject</button>
+            <button id="accept" type="button" data-dismiss="alert"
+                class="btn btn-primary cookieBannerAccept btn-sm">Accept</button>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 topPaddingSmall">
                 <a href="#">
-                    <img class="center-block" src="assets/Logo.png" alt="logo">
+                    <img class="center-block" src="assets/Logo_svg.svg" alt="logo">
                 </a>
                 <p class="normalText topPaddingBig">
                     Sign In with you Spotify account<br>and find out your <span class="redSpan">match score </span> <br>
                     with your friends or random people
                 </p>
-                <img class="topPadding center-block" style="width: 300px;"
+                <img id="googlePlay" class="topPadding center-block" style="width: 300px;"
                     src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png">
                 <p class="quoteText topPadding">“It’s been my dream since I was a child<br>to somehow unite people of
                     the<br>world through love and music.”</p>
@@ -97,23 +102,21 @@
 
             <div class="col-md-12 footer">
                 <div class="col-md-6 textCenter">
-                    <div class="col-md-3"></div>
-                    <i class="far fa-envelope"></i><a class="footerText footerTextRightMargin"
-                        href="mailto:matchmefy@gmail.com">matchmefy@gmail.com</a>
-                    <i class="fab fa-github"></i><a class="footerText"
-                        href="https://github.com/GhimpuLucianEduard">Matchmefy</a>
+                    <div class="col-md-3 "></div>
+                    <a class="footerText footerTextRightMargin noWrap"
+                        href="mailto:matchmefy@gmail.com"><i class="far fa-envelope"></i> matchmefy@gmail.com</a>
+                    <a class="footerText noWrap" 
+                        href="https://github.com/GhimpuLucianEduard"><i class="fab fa-github"></i>Matchmefy</a>
                 </div>
                 <div class="col-md-6 textCenter">
-                    <a class="footerTextGray footerTextRightMargin" href="mailto:matchmefy@gmail.com">• Terms of Use</a>
-                    <a class="footerTextGray" href="https://github.com/GhimpuLucianEduard">• Privacy</a>
+                    <a class="footerTextGray footerTextRightMargin noWrap" href="web-terms.html">• Terms of Use</a>
+                    <a class="footerTextGray footerTextRightMargin noWrap" href="web-privacy.html">• Privacy</a>
+                    <a class="footerTextGray noWrap" href="web-cookies.html">• Cookies</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>

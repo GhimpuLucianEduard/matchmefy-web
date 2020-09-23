@@ -42,10 +42,22 @@ i {
     align-items: center;
 }
 
+.btn {
+    font: normal normal normal 16px Lato;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+ul li {
+    display:inline;
+}
+
 /* Texts */
 
 .titleText {
-    font-family: 'Source Sans Pro', sans-serif;
     color: var(--pure-white);
     text-align: center;
     font: normal normal bold 48px Source Sans Pro;
@@ -89,6 +101,44 @@ i {
     color: var(--pastel-red);
 }
 
+.noWrap {
+    white-space: nowrap;
+    float: none;
+}
+
+/* Cookie banner */
+
+.cookieBanner {
+    background-color: var(--footer-grey);
+}
+
+.cookieBannerText {
+    color: var(--pure-white);
+    font: normal normal normal 16px Lato;
+    text-decoration:none;
+}
+
+.cookieBannerLink {
+    color: var(--pastel-red);
+    font: normal normal bold 16px Lato;
+    text-decoration:none;
+}
+
+.cookieBannerLink:hover {
+    color: var(--pastel-red);
+}
+
+.cookieBannerAccept {
+    background-color: var(--pastel-red) !important;
+    outline-color: var(--pastel-red) !important;
+    border-color: var(--pastel-red) !important;
+}
+
+.cookieBannerReject {
+    color: var(--pure-white) !important;
+    margin-right: 12px;
+}
+
 /* Paddings */
 
 .topPaddingSmall {
@@ -113,6 +163,13 @@ i {
 
 
 @media only screen and (max-width: 600px) {
+    /* Meta */
+
+    .btn {
+        font: normal normal normal 10px Lato;
+        font-size: 10px !important;
+    }
+
     /* Texts */
     
     .titleText {
@@ -147,6 +204,29 @@ i {
         font: normal normal bold 10px Lato;
         text-decoration:none;
     }
+
+    /* Cookie banner */
+
+    .cookieBannerText {
+        color: var(--pure-white);
+        font: normal normal bold 10px Lato;
+        text-decoration:none;
+    }
+
+    .cookieBannerLink {
+        color: var(--pastel-red);
+        font: normal normal bold 10px Lato;
+        text-decoration:none;
+    }
+    
+    .cookieBannerLink:hover {
+        color: var(--pastel-red);
+    }
+
+    .cookieBannerReject {
+        color: var(--pure-white) !important;
+        margin-right: 6px;
+    }    
     
     /* Paddings */
     
